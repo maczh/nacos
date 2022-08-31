@@ -274,7 +274,7 @@ func Init(serverIp string, serverPort int, serviceName, groupName, serviceIp str
 	}
 	instance.Register()
 	//设置定时任务--心跳
-	tickerBeat := time.NewTicker(time.Second * 20)
+	tickerBeat := time.NewTicker(time.Second * 5)
 	go func() {
 		for _ = range tickerBeat.C {
 			instance.HealthBeat()
